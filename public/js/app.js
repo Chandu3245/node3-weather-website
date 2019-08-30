@@ -15,8 +15,8 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value;
     msgOne.textContent = 'Loading...'
     msgTwo.textContent = ''
-
-    fetch('http://localhost:3000/weather?address=' + location).then((res) => {
+//local 'http://localhost:3000/weather?address=
+    fetch('/weather?address=' + location).then((res) => {
         res.json().then((data) => {
             if (data.errGeocode) {
                 msgOne.textContent = data.errGeocode
